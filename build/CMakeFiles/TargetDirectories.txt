@@ -1,5 +1,0 @@
-E:/Qt Projects/learn C/PushBox/PushBox/build/CMakeFiles/edit_cache.dir
-E:/Qt Projects/learn C/PushBox/PushBox/build/CMakeFiles/rebuild_cache.dir
-E:/Qt Projects/learn C/PushBox/PushBox/build/src/CMakeFiles/push_box.dir
-E:/Qt Projects/learn C/PushBox/PushBox/build/src/CMakeFiles/edit_cache.dir
-E:/Qt Projects/learn C/PushBox/PushBox/build/src/CMakeFiles/rebuild_cache.dir

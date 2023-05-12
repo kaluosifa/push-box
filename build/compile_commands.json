@@ -1,7 +1,0 @@
-[
-{
-  "directory": "E:/Qt Projects/learn C/PushBox/PushBox/build/src",
-  "command": "D:/environment/w64devkit/bin/gcc.exe   -g -o CMakeFiles/push_box.dir/main.c.obj -c \"E:/Qt Projects/learn C/PushBox/PushBox/src/main.c\"",
-  "file": "E:/Qt Projects/learn C/PushBox/PushBox/src/main.c"
-}
-]
