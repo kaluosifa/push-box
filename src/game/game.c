@@ -12,7 +12,7 @@ void StartInterface()
 
     while (true) {
         // 初始化
-        char ch = '\0';
+        ch = '\0';
         InitMap();
         g_flag = true;
 
@@ -45,12 +45,31 @@ void StartInterface()
 void PlayGame()
 {
     char ch = '\0';
+    bool ch_flag = false;
 
     while (g_flag) {
+        ch = '\0';
+        ch_flag = false;
         system("cls");
         PrintMap(g_current_map);
 
-        ch = getch();
+        while (!ch_flag)
+        {
+            ch = getch();
+            switch (ch)
+            {
+            case 'q':
+            case 'w':
+            case 's':
+            case 'a':
+            case 'd':
+                ch_flag = true;
+                break;
+            default:
+                break;
+            }
+        }
+
         if (ch == 'q')
         {
             Exit();
