@@ -46,7 +46,7 @@ struct Map g_maps[MAP_NUBMER] = {
 int g_map_nubmer;
 struct Map g_current_map;   // 当前地图数据
 
-char map_file_path[100] = "E:/Qt Projects/learn C/PushBox/PushBox/map.config";
+char map_file_path[100] = "./map.config";
 
 void PrintMap(struct Map m)
 {
