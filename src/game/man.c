@@ -6,7 +6,15 @@ void ManTopMove()
     {
     case ' ':
         {
-            g_current_map.m[g_man.x][g_man.y] = ' ';
+            // 判断人物是否踩在目标点上
+            if (ManOnTarget() && !BoxOnTarget())
+            {
+                g_current_map.m[g_man.x][g_man.y] = 'x';
+            }
+            else
+            {
+                g_current_map.m[g_man.x][g_man.y] = ' ';
+            }
             --g_man.x;
             g_current_map.m[g_man.x][g_man.y] = '$';
         }
@@ -16,16 +24,26 @@ void ManTopMove()
             // 箱子动了，人才能动(相当于人推箱子)
             if (BoxMove('w'))
             {
-                g_current_map.m[g_man.x][g_man.y] = ' ';
+                // 判断人物是否踩在目标点上
+                if (ManOnTarget() && !BoxOnTarget())
+                {
+                    g_current_map.m[g_man.x][g_man.y] = 'x';
+                }
+                else
+                {
+                    g_current_map.m[g_man.x][g_man.y] = ' ';
+                }
                 --g_man.x;
                 g_current_map.m[g_man.x][g_man.y] = '$';
             }
-
         }
         break;
     case 'x':
         {
-
+            // 玩家能移动到目标点上，从目标点上移出后目标点重新显示
+            g_current_map.m[g_man.x][g_man.y] = ' ';
+            --g_man.x;
+            g_current_map.m[g_man.x][g_man.y] = '$';
         }
         break;
     default:
@@ -41,7 +59,15 @@ void ManDownMove()
     {
     case ' ':
         {
-            g_current_map.m[g_man.x][g_man.y] = ' ';
+            // 判断人物是否踩在目标点上
+            if (ManOnTarget() && !BoxOnTarget())
+            {
+                g_current_map.m[g_man.x][g_man.y] = 'x';
+            }
+            else
+            {
+                g_current_map.m[g_man.x][g_man.y] = ' ';
+            }
             ++g_man.x;
             g_current_map.m[g_man.x][g_man.y] = '$';
         }
@@ -51,7 +77,15 @@ void ManDownMove()
             // 箱子动了，人才能动(相当于人推箱子)
             if (BoxMove('s'))
             {
-                g_current_map.m[g_man.x][g_man.y] = ' ';
+                // 判断人物是否踩在目标点上
+                if (ManOnTarget() && !BoxOnTarget())
+                {
+                    g_current_map.m[g_man.x][g_man.y] = 'x';
+                }
+                else
+                {
+                    g_current_map.m[g_man.x][g_man.y] = ' ';
+                }
                 ++g_man.x;
                 g_current_map.m[g_man.x][g_man.y] = '$';
             }
@@ -60,7 +94,10 @@ void ManDownMove()
         break;
     case 'x':
         {
-
+            // 玩家能移动到目标点上，从目标点上移出后目标点重新显示
+            g_current_map.m[g_man.x][g_man.y] = ' ';
+            ++g_man.x;
+            g_current_map.m[g_man.x][g_man.y] = '$';
         }
         break;
     default:
@@ -76,7 +113,15 @@ void ManLeftMove()
     {
     case ' ':
         {
-            g_current_map.m[g_man.x][g_man.y] = ' ';
+            // 判断人物是否踩在目标点上
+            if (ManOnTarget() && !BoxOnTarget())
+            {
+                g_current_map.m[g_man.x][g_man.y] = 'x';
+            }
+            else
+            {
+                g_current_map.m[g_man.x][g_man.y] = ' ';
+            }
             --g_man.y;
             g_current_map.m[g_man.x][g_man.y] = '$';
         }
@@ -86,7 +131,15 @@ void ManLeftMove()
             // 箱子动了，人才能动(相当于人推箱子)
             if (BoxMove('a'))
             {
-                g_current_map.m[g_man.x][g_man.y] = ' ';
+                // 判断人物是否踩在目标点上
+                if (ManOnTarget() && !BoxOnTarget())
+                {
+                    g_current_map.m[g_man.x][g_man.y] = 'x';
+                }
+                else
+                {
+                    g_current_map.m[g_man.x][g_man.y] = ' ';
+                }
                 --g_man.y;
                 g_current_map.m[g_man.x][g_man.y] = '$';
             }
@@ -94,7 +147,9 @@ void ManLeftMove()
         break;
     case 'x':
         {
-
+            g_current_map.m[g_man.x][g_man.y] = ' ';
+            --g_man.y;
+            g_current_map.m[g_man.x][g_man.y] = '$';
         }
         break;
     default:
@@ -110,7 +165,15 @@ void ManRightMove()
     {
     case ' ':
         {
-            g_current_map.m[g_man.x][g_man.y] = ' ';
+            // 判断人物是否踩在目标点上
+            if (ManOnTarget() && !BoxOnTarget())
+            {
+                g_current_map.m[g_man.x][g_man.y] = 'x';
+            }
+            else
+            {
+                g_current_map.m[g_man.x][g_man.y] = ' ';
+            }
             ++g_man.y;
             g_current_map.m[g_man.x][g_man.y] = '$';
         }
@@ -120,7 +183,15 @@ void ManRightMove()
             // 箱子动了，人才能动(相当于人推箱子)
             if (BoxMove('d'))
             {
-                g_current_map.m[g_man.x][g_man.y] = ' ';
+                // 判断人物是否踩在目标点上
+                if (ManOnTarget() && !BoxOnTarget())
+                {
+                    g_current_map.m[g_man.x][g_man.y] = 'x';
+                }
+                else
+                {
+                    g_current_map.m[g_man.x][g_man.y] = ' ';
+                }
                 ++g_man.y;
                 g_current_map.m[g_man.x][g_man.y] = '$';
             }
@@ -128,7 +199,9 @@ void ManRightMove()
         break;
     case 'x':
         {
-
+            g_current_map.m[g_man.x][g_man.y] = ' ';
+            ++g_man.y;
+            g_current_map.m[g_man.x][g_man.y] = '$';
         }
         break;
     default:

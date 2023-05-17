@@ -11,6 +11,7 @@ extern "C" {
 
 #include "map.h"
 #include "box.h"
+#include "target.h"
 
 extern struct Point g_man;
 extern struct Map g_maps[MAP_NUBMER];
