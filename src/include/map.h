@@ -15,6 +15,8 @@ extern "C" {
 
 #define BOX_NUMBER 10
 #define MAP_NUBMER 2
+#define MAP_ROW 10
+#define MAP_COL 10
 
 struct Point {
     int x;

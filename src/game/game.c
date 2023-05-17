@@ -24,17 +24,21 @@ void StartInterface()
         printf("\n");
         printf("Press 's' to start game or 'q' to quit \n");
 
-        while (ch != 'q' && ch != 's')
+        while (ch != 'q' && ch != 's' && ch != 'c')
             ch = getch();
 
         switch (ch)
         {
         case 'q':
             return;
+        case 'c':
+            {
+                LoadMap();
+            }
         case 's':
-            PlayGame();
-            break;
-        default:
+            {
+                PlayGame();
+            }
             break;
         }
     }
@@ -63,6 +67,7 @@ void PlayGame()
             case 's':
             case 'a':
             case 'd':
+            case 'x':
                 ch_flag = true;
                 break;
             default:
@@ -72,6 +77,12 @@ void PlayGame()
 
         if (ch == 'q')
         {
+            Exit();
+            continue;
+        }
+        else if (ch == 'x')
+        {
+            SaveMap();
             Exit();
             continue;
         }
